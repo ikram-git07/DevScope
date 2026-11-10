@@ -1,40 +1,113 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <script src="shortlist.js" defer></script>
-    <link rel="stylesheet" href="index.html">
+    <title>DevScope</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-
-
+    <link rel="stylesheet" href="index.html">
+    <script src="shortlist.js" defer></script>
 </head>
 
-<body class="bg-slate-800">
-    <header class="ml-40 mt-6 mr-40 ">
-        <div class=" flex justify-between bg-slate-700 p-6 text-white rounded-xl">
+<body class="bg-slate-100 text-slate-800 min-h-screen">
 
-            <strong>DevScope</strong>
-            <div>
-                <a href="index.html" id="recherche" class=" px-2 cursor-pointer rounded-xl">Recherche</a>
-                <a href="shortlist.html" id="shortlist">Shortlist</a>
-            </div>
+    <header class="bg-indigo-900 text-white mr-10 ml-10 mt-6 border rounded-xl" >
+        <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
+            <strong class="text-xl tracking-wide">
+                <span class="text-emerald-400">&lt;/&gt;</span> DevScope
+            </strong>
+            <nav class="flex gap-3 text-sm">
+                <a href="index.html" id="recherche"
+                    class="px-4 py-2 rounded-lg bg-emerald-500 text-white font-medium">Recherche</a>
+                <a href="shortlist.html" id="shortlist" class="px-4 py-2 rounded-lg hover:bg-indigo-800">Shortlist</a>
+            </nav>
         </div>
     </header>
 
-    <div class="flex justify-center">
-        <input type="search" id="recherch-analyse" placeholder="Entrez un nom d'utilisateur... "
-            class="w-100 border border-gray-600 mt-6 p-4 text-white font-medium rounded-xl">
-        <button type="submit" id="analyser"
-            class="cursor-pointer text-white border border-gray-600 rounded-xl mt-6 p-4 bg-slate-700 hover:bg-violet-600">Analyser</button>
+    <div class="max-w-6xl mx-auto px-4">
+        <div class="flex gap-2 mt-6">
+            <input type="search" placeholder="Entrez un nom d'utilisateur..."
+                class="flex-1 bg-white border border-slate-300 rounded-lg px-4 py-3 outline-none focus:ring-2 focus:ring-emerald-400">
+            <button type="submit" id="analyser"
+                class="px-6 rounded-lg bg-emerald-500 text-white font-semibold hover:bg-emerald-600 cursor-pointer">
+                Analyser
+            </button>
+        </div>
+
+        <main class="mt-8 flex flex-col md:flex-row gap-6 items-start pb-16">
+
+            <aside class="w-full md:w-72 shrink-0 md:sticky md:top-6 bg-white rounded-2xl shadow-md overflow-hidden">
+                    <div class="h-24 bg-gradient-to-r from-emerald-400 to-indigo-600"></div>
+                <div class="px-6 pb-6 text-center">
+                    <img src="https://via.placeholder.com/112"
+                         class="w-28 h-28 rounded-full mx-auto -mt-14 border-4 border-white object-cover">
+                    <h2 class="text-xl font-bold mt-3">Soufiane Boushaba</h2>
+                    <p class="text-emerald-600 text-sm font-medium">@soufiane-boushaba</p>
+                    <p class="text-slate-500 italic my-3">"Full stack web developer"</p>
+
+                    <div class="text-sm text-slate-600 space-y-1">
+                        <p>📍 Errachidia, Morocco</p>
+                        <p> 📅 Membre depuis janvier 2021</p>
+                    </div>
+
+                    <div class="grid grid-cols-3 divide-x divide-slate-200 my-5 py-3 border-y border-slate-200">
+                        <div>
+                            <b class="block text-lg text-indigo-700">64</b>
+                            <span class="text-xs text-slate-500">Dépôts</span>
+
+                        </div>
+                        <div>
+                            <b class="block text-lg text-indigo-700">95</b>
+                            <span class="text-xs text-slate-500">Abonnés</span>
+                        </div>
+                        <div>
+                            <b class="block text-lg text-indigo-700">95</b>
+                            <span class="text-xs text-slate-500">Abonnés</span>
+                        </div>
+                    </div>
+
+                    <button
+                        class="w-full p-3 rounded-lg bg-indigo-700 text-white font-semibold hover:bg-indigo-800 cursor-pointer">★
+                        Ajouter à la shortlist</button>
+                    <a href="#" class="block mt-3 text-sm text-slate-500 hover:text-indigo-700">Voir le profil original
+                        ↗ </a>
+                </div>
+            </aside>
+            <section class="flex-1 w-full">
+                <h2 class="text-xl font-bold mb-4 flex items-center gap-2"> Dépôts
+                    <span class="text-sm bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">64</span>
+
+                </h2>
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+
+                    <article
+                        class="bg-white rounded-xl shadow-sm border-t-4 border-emerald-400 p-4 hover:shadow-md transition">
+                        <h3 class="font-bold">test_workflow</h3>
+                        <p class="text-sm text-slate-500 my-2">Aucune description.</p>
+                        <div class="flex gap-3 text-xs text-slate-600 items-center">
+                            <span class="px-2 py-1 rounded bg-emerald-100 text-emerald-700">HTML</span>
+                            <span>★ 0</span>
+                            <span>⑂ 0</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-3">Mis à jour il y a 27 jours</p>
+                    </article>
+
+                    <article
+                        class="bg-white rounded-xl shadow-sm border-t-4 border-indigo-400 p-4 hover:shadow-md transition">
+                        <h3 class="font-bold">git_workflow</h3>
+                        <p class="text-sm text-slate-500 my-2">Aucune description.</p>
+                        <div class="flex gap-3 text-xs text-slate-600 items-center">
+                            <span class="px-2 py-1 rounded bg-slate-100 text-slate-600">Non précisé</span>
+                            <span>★ 0</span>
+                            <span>⑂ 0</span>
+                        </div>
+                        <p class="text-xs text-slate-400 mt-3">Mis à jour il y a 30 jours</p>
+                    </article>
+                </div>
+            </section>
+        </main>
     </div>
-
-
-    <main>
-        <aside class="bg-slate-400 mt-6   ml-5 ">ijfevh</aside>
-    </main>
 </body>
 
 </html>

@@ -15,20 +15,29 @@
 
             <strong>DevScope</strong>
             <div>
-                <button class=" border border-gray-600 bg-slate-400 px-2 cursor-pointer rounded-xl">Recherche</button>
-                <button>Shortlist</button>
+                <a href="index.html" id="recherche" class="  px-2 cursor-pointer rounded-xl">Recherche</a>
+                <a href="shortlist.html" id="shortlist">Shortlist</a>
             </div>
         </div>
     </header>
-    <main class="flex flex-col  items-center">
-        <div class="text-white  font-bold" >
-            <strong>Trouvez les meilleurs développeurs grâce à leur code </strong>
+    <main
+        class="flex flex-col  items-center absolute top-[50%] translate-y-[-50%] w-[80%] translate-x-[-50%] left-[50%] text-center">
+        <div class="text-white font-medium text-2xl">
+            <h1 class="max-w-xl"><strong>Trouvez les meilleurs développeurs grâce à leur code </strong>
+                <p >Analyser un profil,ses projets et ses langages en quelques secondes.</p>
+            </h1>
+
         </div>
-        <div class="">
-        <input type="search" id="recherch-analyse" placeholder="Entrez un nom d'utilisateur... " class="w-100 border border-gray-600 mt-6 p-4 text-white font-medium rounded-xl">
-        <button type="submit" id="analyser" class="cursor-pointer text-white border border-gray-600 rounded-xl mt-6 p-4">Analyser</button>
+        <form action="shortlist.html" method="get">
+        <div>
+            <input name="query" 
+            type="search" id="recherch-analyse" placeholder="Entrez un nom d'utilisateur... "
+                class="w-100 border border-gray-600 mt-6 p-4 text-white font-medium rounded-xl">
+            <button type="submit" id="analyser"
+                class="cursor-pointer text-white border border-gray-600 rounded-xl mt-6 p-4 bg-slate-700 hover:bg-violet-600">Analyser</button>
         </div>
-     
+        </form>
+
 
 
     </main>

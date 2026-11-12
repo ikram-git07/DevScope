@@ -12,7 +12,7 @@
 
 <body class="bg-slate-100 text-slate-800 min-h-screen">
 
-    <header class="bg-indigo-900 text-white mr-10 ml-10 mt-6 border rounded-xl" >
+    <header class="bg-indigo-900 text-white mr-10 ml-10 mt-6 border rounded-xl">
         <div class="max-w-6xl mx-auto px-4 py-4 flex justify-between items-center">
             <strong class="text-xl tracking-wide">
                 <span class="text-emerald-400">&lt;/&gt;</span> DevScope
@@ -38,10 +38,10 @@
         <main class="mt-8 flex flex-col md:flex-row gap-6 items-start pb-16">
 
             <aside class="w-full md:w-72 shrink-0 md:sticky md:top-6 bg-white rounded-2xl shadow-md overflow-hidden">
-                    <div class="h-24 bg-gradient-to-r from-emerald-400 to-indigo-600"></div>
+                <div class="h-24 bg-gradient-to-r from-emerald-400 to-indigo-600"></div>
                 <div class="px-6 pb-6 text-center">
                     <img id="avatar" src="https://via.placeholder.com/112"
-                         class="w-28 h-28 rounded-full mx-auto -mt-14 border-4 border-white object-cover">
+                        class="w-28 h-28 rounded-full mx-auto -mt-14 border-4 border-white object-cover">
                     <h2 id="name" class="text-xl font-bold mt-3">Soufiane Boushaba</h2>
                     <p id="username" class="text-emerald-600 text-sm font-medium">@soufiane-boushaba</p>
                     <p id="bio" class="text-slate-500 italic my-3">"Full stack web developer"</p>
@@ -49,47 +49,35 @@
                     <div class="text-sm text-slate-600 space-y-1">
                         <p id="local">📍</p>
                         <p id="created"> 📅 Membre depuis janvier 2021</p>
-                    <img src="https://via.placeholder.com/112"
-                         class="w-28 h-28 rounded-full mx-auto -mt-14 border-4 border-white object-cover">
-                    <h2 class="text-xl font-bold mt-3">Soufiane Boushaba</h2>
-                    <p class="text-emerald-600 text-sm font-medium">@soufiane-boushaba</p>
-                    <p class="text-slate-500 italic my-3">"Full stack web developer"</p>
 
-                    <div class="text-sm text-slate-600 space-y-1">
-                        <p>📍 Errachidia, Morocco</p>
-                        <p> 📅 Membre depuis janvier 2021</p>
+
+                        <div class="grid grid-cols-3 divide-x divide-slate-200 my-5 py-3 border-y border-slate-200">
+                            <div>
+                                <b id="repos" class="block text-lg text-indigo-700"></b>
+                                <b class="block text-lg text-indigo-700">64</b>
+                                <span class="text-xs text-slate-500">Dépôts</span>
+
+                            </div>
+                            <div>
+                                <b id="followers" class="block text-lg text-indigo-700"></b>
+                                <span class="text-xs text-slate-500">Abonnés</span>
+                            </div>
+
+                            <div>
+                                <b class="block text-lg text-indigo-700">95</b>
+                                <span class="text-xs text-slate-500">Abonnés</span>
+                            </div>
+                        </div>
+
+                        <button
+                            class="w-full p-3 rounded-lg bg-indigo-700 text-white font-semibold hover:bg-indigo-800 cursor-pointer">★
+                            Ajouter à la shortlist</button>
+                        <a id="profile-link" href="#"
+                            class="block mt-3 text-sm text-slate-500 hover:text-indigo-700">Voir le profil original
+
                     </div>
-
-                    <div class="grid grid-cols-3 divide-x divide-slate-200 my-5 py-3 border-y border-slate-200">
-                        <div>
-                            <b id="repos" class="block text-lg text-indigo-700"></b>
-                            <b class="block text-lg text-indigo-700">64</b>
-                            <span class="text-xs text-slate-500">Dépôts</span>
-
-                        </div>
-                        <div>
-                            <b id="followers" class="block text-lg text-indigo-700"></b>
-                            <span class="text-xs text-slate-500">Abonnés</span>
-                        </div>
-                        <div>
-                            <b id="following" class="block text-lg text-indigo-700"></b>
-                            <b class="block text-lg text-indigo-700">95</b>
-                            <span class="text-xs text-slate-500">Abonnés</span>
-                        </div>
-                        <div>
-                            <b class="block text-lg text-indigo-700">95</b>
-                            <span class="text-xs text-slate-500">Abonnés</span>
-                        </div>
-                    </div>
-
-                    <button
-                        class="w-full p-3 rounded-lg bg-indigo-700 text-white font-semibold hover:bg-indigo-800 cursor-pointer">★
-                        Ajouter à la shortlist</button>
-                    <a id="profile-link" href="#" class="block mt-3 text-sm text-slate-500 hover:text-indigo-700">Voir le profil original
-                    <a href="#" class="block mt-3 text-sm text-slate-500 hover:text-indigo-700">Voir le profil original
-                        ↗ </a>
-                </div>
             </aside>
+
             <section class="flex-1 w-full">
                 <h2 class="text-xl font-bold mb-4 flex items-center gap-2"> Dépôts
                     <span class="text-sm bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">64</span>
@@ -99,13 +87,10 @@
 
                     <article
                         class="bg-white rounded-xl shadow-sm border-t-4 border-emerald-400 p-4 hover:shadow-md transition">
-<<<<<<< HEAD
-                        <h3  class="font-bold">test_workflow</h3>
-                        <p  class="text-sm text-slate-500 my-2">Aucune description.</p>
-=======
+
                         <h3 class="font-bold">test_workflow</h3>
                         <p class="text-sm text-slate-500 my-2">Aucune description.</p>
->>>>>>> c653225aea659900a2a2b09f6ec81aa43e4c2b3a
+
                         <div class="flex gap-3 text-xs text-slate-600 items-center">
                             <span class="px-2 py-1 rounded bg-emerald-100 text-emerald-700">HTML</span>
                             <span>★ 0</span>

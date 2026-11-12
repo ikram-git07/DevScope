@@ -15,3 +15,22 @@ btnEnvoyer.addEventListener("click", ()=> {
 
 
 
+
+btnEnvoyer.addEventListener("click", ()=> {});
+
+
+
+// recherche
+ async function fetchData (inputName) {
+   try {
+    const userData = await fetch (`https://api.github.com/users/${inputName}`);
+    console.log(userData)
+
+   }
+
+   catch (erreur){
+    console.log("qwkjehfni")
+   }
+ }
+ fetchData();
+

@@ -29,7 +29,7 @@ btnEnvoyer.addEventListener("click", ()=> {});
    }
 
    catch (erreur){
-    console.log("qwkjehfni")
+    console.log("")
    }
  }
  fetchData();

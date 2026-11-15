@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>DevScope</title>
     <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
-    <link rel="stylesheet" href="index.html">
+
     <script src="shortlist.js" defer></script>
 </head>
 
@@ -54,63 +54,56 @@
                         <div class="grid grid-cols-3 divide-x divide-slate-200 my-5 py-3 border-y border-slate-200">
                             <div>
                                 <b id="repos" class="block text-lg text-indigo-700"></b>
-                                <b class="block text-lg text-indigo-700">64</b>
-                                <span class="text-xs text-slate-500">Dépôts</span>
 
+                                <span class="text-xs text-slate-500">Dépôts</span>
                             </div>
                             <div>
                                 <b id="followers" class="block text-lg text-indigo-700"></b>
                                 <span class="text-xs text-slate-500">Abonnés</span>
                             </div>
-
                             <div>
-                                <b class="block text-lg text-indigo-700">95</b>
+                                <b id="following" class="block text-lg text-indigo-700"></b>
                                 <span class="text-xs text-slate-500">Abonnés</span>
                             </div>
                         </div>
-
                         <button
                             class="w-full p-3 rounded-lg bg-indigo-700 text-white font-semibold hover:bg-indigo-800 cursor-pointer">★
                             Ajouter à la shortlist</button>
                         <a id="profile-link" href="#"
                             class="block mt-3 text-sm text-slate-500 hover:text-indigo-700">Voir le profil original
+                        </a>
 
                     </div>
+                </div>
             </aside>
 
             <section class="flex-1 w-full">
                 <h2 class="text-xl font-bold mb-4 flex items-center gap-2"> Dépôts
-                    <span class="text-sm bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">64</span>
+                    <span id="repos-count"
+                        class="text-sm bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">0</span>
 
                 </h2>
-                <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+                <div class="grid grid-cols-1 md:grid-cols- gap-4">
+                    <div id="repos-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
+                    <template id="repo-template">
+                        <article
+                            class="bg-white rounded-xl shadow-sm border-t-4 border-emerald-400 p-4 hover:shadow-md transition">
 
-                    <article
-                        class="bg-white rounded-xl shadow-sm border-t-4 border-emerald-400 p-4 hover:shadow-md transition">
+                            <h3 id="repo-name" class="font-bold">test_workflow</h3>
+                            <p id="repo-description" class="text-sm text-slate-500 my-2">Aucune description.</p>
 
-                        <h3 class="font-bold">test_workflow</h3>
-                        <p class="text-sm text-slate-500 my-2">Aucune description.</p>
+                            <div class="flex gap-3 text-xs text-slate-600 items-center">
+                                <span id="repo-language"
+                                    class="px-2 py-1 rounded bg-emerald-100 text-emerald-700">HTML</span>
+                                <span id="repo-stars">★ 0</span>
+                                <span id="repo-forks">⑂ 0</span>
+                            </div>
+                            <p id="repo-date" class="text-xs text-slate-400 mt-3">Mis à jour il y a 27 jours</p>
+                            <a id="repo-link" href="#" target="_blank"> Voir le dépôt</a>
+                        </article>
+                    </template>
 
-                        <div class="flex gap-3 text-xs text-slate-600 items-center">
-                            <span class="px-2 py-1 rounded bg-emerald-100 text-emerald-700">HTML</span>
-                            <span>★ 0</span>
-                            <span>⑂ 0</span>
-                        </div>
-                        <p class="text-xs text-slate-400 mt-3">Mis à jour il y a 27 jours</p>
-                    </article>
 
-                    <article
-                        class="bg-white rounded-xl shadow-sm border-t-4 border-indigo-400 p-4 hover:shadow-md transition">
-                        <h3 class="font-bold">git_workflow</h3>
-                        <p class="text-sm text-slate-500 my-2">Aucune description.</p>
-                        <div class="flex gap-3 text-xs text-slate-600 items-center">
-                            <span class="px-2 py-1 rounded bg-slate-100 text-slate-600">Non précisé</span>
-                            <span>★ 0</span>
-                            <span>⑂ 0</span>
-                        </div>
-                        <p class="text-xs text-slate-400 mt-3">Mis à jour il y a 30 jours</p>
-                    </article>
-                </div>
             </section>
         </main>
     </div>

@@ -8,29 +8,16 @@ btnEnvoyer.addEventListener("click", ()=> {
     const username =rechercheIinput.ariaValueMax.trim();
 
     if (username !== "") {
-        window.location.href =`shortlist.html?
+        window.location.href =`profil.html?
         query=${username}`
     }
 });
-
-
 
 
 btnEnvoyer.addEventListener("click", ()=> {});
 
 
 
-// recherche
- async function fetchData (inputName) {
-   try {
-    const userData = await fetch (`https://api.github.com/users/${inputName}`);
-    console.log(userData)
 
-   }
 
-   catch (erreur){
-    console.log("")
-   }
- }
- fetchData();
 

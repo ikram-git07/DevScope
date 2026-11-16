@@ -1,0 +1,1 @@
+const API_URL = "https://mockapi.io/projects/6af9bb956d8b86fb22d731a1#";

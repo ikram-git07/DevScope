@@ -8,9 +8,8 @@ const urlParams = new URLSearchParams(window.location.search);
 const recherchAnalyse = document.querySelector("#recherch-analyse");
 console.log(urlParams);
 const prevInput = urlParams.get("query");
-// const affUser = document.querySelector("#aff-user");
+const affUser = document.querySelector("#aff-user");
 const ajShort = document.querySelector("#ajShort");
-
 const messageBtn = document.querySelector("#message-shortlist");
 
 
@@ -21,14 +20,14 @@ recherchAnalyse.value = prevInput;
 const reposList = document.querySelector("#repos-list");
 const repoTemplate = document.querySelector("#repo-template");
 
-
+let allRepo = [];
 
 async function fetchData(inputName) {
     try {
         const response = await fetch(
             `https://api.github.com/users/${inputName}`,
 
-          
+           
         );
 
         const fetchRepo = await fetch(
@@ -51,7 +50,9 @@ async function fetchData(inputName) {
         const data = await response.json();
         const repos = await fetchRepo.json();
 
-        afficherRepos(repos);
+        allRepo = repos
+        afficherRepos(allRepo);
+        // afficherRepos(repos);
         // console.log(fetchRepo)
 
         // console.log(response)
@@ -65,6 +66,7 @@ async function fetchData(inputName) {
         document.querySelector("#following").textContent = data.following;
         document.querySelector("#profile-link").href = data.html_url
         document.querySelector("#local").textContent = data.location || "📍 Non précisé";
+        document.querySelector("#created").textContent = "📅 Membre depuis " + new Date(data.created_at).toLocaleDateString("fr-FR");
 
 
 
@@ -113,7 +115,7 @@ function afficherRepos(repos) {
         clone.querySelector("#repo-description").textContent = repo.description || "Aucune description.";
         clone.querySelector("#repo-language").textContent = repo.language || "Non précisé";
         clone.querySelector("#repo-stars").textContent = "★ " + repo.stargazers_count;
-        clone.querySelector("#repo-forks").textConten = "⑂ " + repo.forks_count;
+        clone.querySelector("#repo-forks").textContent = "⑂ " + repo.forks_count;
         clone.querySelector("#repo-date").textContent = "Mis à jour le " + new Date(repo.updated_at).toLocaleDateString("fr-FR");
         clone.querySelector("#repo-link").href = repo.html_url;
         reposList.appendChild(clone);
@@ -125,4 +127,18 @@ function afficherRepos(repos) {
 
 
 
+const recherche =document.querySelector("#recherche-repo");
+const filterLang=document.querySelector("#filterLang");
 
+
+
+
+function Recherch (){
+    const texte =recherche.value.trim().toLowerCase();
+
+    const filterrepo =allRepo.filter( repo =>
+        repo.name.toLowerCase().includes(texte)
+    );
+    afficherRepos(filterrepo);
+}
+recherche.addEventListener("input", Recherch);

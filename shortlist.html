@@ -49,8 +49,8 @@
                     <p id="bio" class="text-slate-500 italic my-3">"Full stack web developer"</p>
 
                     <div class="text-sm text-slate-600 space-y-1">
-                        <p id="local">📍</p>
-                        <p id="created"> 📅 Membre depuis janvier 2021</p>
+                        <p id="local"></p>
+                        <p id="created"></p>
 
 
                         <div class="grid grid-cols-3 divide-x divide-slate-200 my-5 py-3 border-y border-slate-200">
@@ -87,6 +87,24 @@
                         class="text-sm bg-emerald-100 text-emerald-700 px-3 py-1 rounded-full">0</span>
 
                 </h2>
+
+
+
+<!-- filter et recherch -->
+
+                 <div class="mt-6 flex  items-center gap-3 rounded-xl border border-slate-900 mb-5 p-4">
+            <input id="recherche-repo" type="search" placeholder="rechercher sur les repots par nom... "
+                class="w-full bg-green-200 p-1 rounded-xl">
+            <div class="flex gap-1 rounded-lg  bg-green-200 p-1 " id="filterLang">
+                <button data-poste="Tous"
+                    class="filter rounded-md bg-green-500 px-3 py-1 text-sm font-semibold ">Tous</button>
+                <button data-poste="Gardien" class="filter rounded-md px-3 py-1 text-sm font-semibold  ">JS</button>
+                <button data-poste="Milieu" class="filter rounded-md px-3 py-1 text-sm font-semibold  "> Java</button>
+                <button data-poste="Attaquant" class="filter rounded-md px-3 py-1 text-sm font-semibold "> Python</button>
+                <button data-poste="Défenseur" class="filter rounded-md px-3 py-1 text-sm font-semibold ">C</button>
+            </div>
+
+        </div>
                 <div class="grid grid-cols-1 md:grid-cols- gap-4">
                     <div id="repos-list" class="grid grid-cols-1 md:grid-cols-2 gap-4"></div>
                     <template id="repo-template">

@@ -32,10 +32,7 @@ async function fetchData(inputName) {
 
         const fetchRepo = await fetch(
             `https://api.github.com/users/${inputName}/repos`, {
-            headers: {
-                authorization: `Bearer ${token}`,
-
-            },
+           
         }
         )
         if (!response.ok) {

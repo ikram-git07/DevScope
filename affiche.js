@@ -4,13 +4,6 @@ const container = document.querySelector("#shortlist-container");
 const compteur = document.querySelector("#nombre-candidats");
 
 
-container.addEventListener("click", (e) => {
-    console.log(e.target)
-    e.target.closest(".card")
-    console.log(e.target.closest(".card"))
-
-
-})
 
 function shortlist(users) {
     container.innerHTML = "";
@@ -38,13 +31,26 @@ function shortlist(users) {
             </div>
             <div class="flex flex-wrap items-center justify-center gap-3 mt-5">
                 <div class="text-lime-500 text-2xl tracking-wider">${"★".repeat(user.rating || 0)}</div>
-                <button class="text-rose-500 border border-rose-500 rounded-lg px-4 py-2 font-bold hover:bg-rose-500/10">● REFUSÉ</button>
-                <button class="text-cyan-700 border border-cyan-700 rounded-lg px-4 py-2 font-bold hover:bg-cyan-500/10">✎ Modifier</button>
-                <button  class="text-rose-500 border border-rose-800 rounded-lg px-4 py-2 font-bold hover:bg-rose-500/10">✕ Supprimer</button>
+                <button  class="supp text-rose-500 border border-rose-500 rounded-lg px-4 py-2 font-bold hover:bg-rose-500/10">● REFUSÉ</button>
+                <button class="edit text-cyan-700 border border-cyan-700 rounded-lg px-4 py-2 font-bold hover:bg-cyan-500/10">✎ Modifier</button>
+                <button  class=" status text-rose-500 border border-rose-800 rounded-lg px-4 py-2 font-bold hover:bg-rose-500/10">✕ Supprimer</button>
             </div>
         </div>`;
     });
 }
+
+// supp.addEventListener("click",() =>{
+//     Supprimer();
+// }
+// );
+
+
+container.addEventListener("click", (e) => {
+    console.log(e.target)
+    e.target.closest(".card")
+    console.log(e.target.closest(".card"))
+
+})
 
 async function init() {
     try {
@@ -63,3 +69,15 @@ async function test() {
     console.log(del)
 }
 test();
+
+function supprimer (candidat){
+    try{
+        const supaf = await deletcandidat(candidat.id)
+        if (!supaf){
+            console.log("")
+        }
+
+    }
+
+
+}

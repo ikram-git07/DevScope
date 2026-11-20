@@ -27,7 +27,7 @@ async function fetchData(inputName) {
         const response = await fetch(
             `https://api.github.com/users/${inputName}`,
 
-           
+          
         );
 
         const fetchRepo = await fetch(
@@ -125,20 +125,41 @@ function afficherRepos(repos) {
 
 
 
-
-
 const recherche =document.querySelector("#recherche-repo");
-const filterLang=document.querySelector("#filterLang");
-
 
 
 
 function Recherch (){
     const texte =recherche.value.trim().toLowerCase();
-
     const filterrepo =allRepo.filter( repo =>
         repo.name.toLowerCase().includes(texte)
     );
     afficherRepos(filterrepo);
 }
 recherche.addEventListener("input", Recherch);
+
+
+
+
+
+const filtrage =document.querySelectorAll(".filter");
+console.log(filtrage)
+let valueFilter = "Tous";
+
+filtrage.forEach(filtr => {
+    console.log(filtr.dataset.lang)
+    filtr.addEventListener("click", () => {
+
+        valueFilter = filtr.dataset.lang
+        console.log(valueFilter)
+        filtrages()
+    })
+})
+
+function filtrages(){
+    const filterlang = allRepo.filter(u => valueFilter === "Tous" || u.language === valueFilter)
+    console.log(filterlang)
+    afficherRepos(filterlang)
+    console.log(allRepo)
+    console.log(valueFilter)
+}

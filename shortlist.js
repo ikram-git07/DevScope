@@ -123,9 +123,6 @@ function afficherRepos(repos) {
 
 
 const recherche =document.querySelector("#recherche-repo");
-
-
-
 function Recherch (){
     const texte =recherche.value.trim().toLowerCase();
     const filterrepo =allRepo.filter( repo =>
@@ -160,3 +157,5 @@ function filtrages(){
     console.log(allRepo)
     console.log(valueFilter)
 }
+
+

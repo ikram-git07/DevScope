@@ -11,7 +11,7 @@ function shortlist(users) {
 
     users.forEach(user => {
         container.innerHTML += `
-        <div class="card bg-white border border-green-800 rounded-2xl p-6 shadow-md">
+        <div class="card bg-white border border-green-800 rounded-2xl p-6 shadow-md" data-id="${user.id}" >
             <div class="flex items-center gap-5">
                 <img src="${user.avatar_url}" alt="Avatar"
                      class="w-16 h-16 rounded-full border-4 border-slate-500 object-cover">
@@ -31,26 +31,29 @@ function shortlist(users) {
             </div>
             <div class="flex flex-wrap items-center justify-center gap-3 mt-5">
                 <div class="text-lime-500 text-2xl tracking-wider">${"★".repeat(user.rating || 0)}</div>
-                <button  class="supp text-rose-500 border border-rose-500 rounded-lg px-4 py-2 font-bold hover:bg-rose-500/10">● REFUSÉ</button>
+                <button  class="status text-rose-500 border border-rose-500 rounded-lg px-4 py-2 font-bold hover:bg-rose-500/10">● REFUSÉ</button>
                 <button class="edit text-cyan-700 border border-cyan-700 rounded-lg px-4 py-2 font-bold hover:bg-cyan-500/10">✎ Modifier</button>
-                <button  class=" status text-rose-500 border border-rose-800 rounded-lg px-4 py-2 font-bold hover:bg-rose-500/10">✕ Supprimer</button>
-            </div>
+                <button  class="supp text-rose-500 border border-rose-800 rounded-lg px-4 py-2 font-bold hover:bg-rose-500/10">✕ Supprimer</button>
+            </div>z
         </div>`;
     });
 }
 
-// supp.addEventListener("click",() =>{
-//     Supprimer();
-// }
-// );
 
 
-container.addEventListener("click", (e) => {
+container.addEventListener("click", async (e) => {
     console.log(e.target)
     e.target.closest(".card")
     console.log(e.target.closest(".card"))
+    const button =e.target.closest(".supp");
+    if (!button) return;
 
-})
+    const card =button.closest(".card");
+    const id =card.dataset.id;
+    
+    await supprimer(id, card);
+
+});
 
 async function init() {
     try {
@@ -61,23 +64,22 @@ async function init() {
         container.innerHTML = `<p class="text-rose-600">Impossible de charger la shortlist.</p>`;
     }
 }
-
 init();
 
-async function test() {
-    const del = await deletcandidat(2)
-    console.log(del)
-}
-test();
 
-function supprimer (candidat){
-    try{
-        const supaf = await deletcandidat(candidat.id)
-        if (!supaf){
-            console.log("")
-        }
+async function supprimer(id, card) {
+    if (!confirm("Supprimer ce candidat ?"))
+         return;
 
+    try {
+        await deletcandidat(id);
+        card.remove();
+        compteur.textContent = container.children.length;
+    } catch (e) {
+        console.error(e);
+        alert("Erreur pendant la suppression.");
     }
-
-
 }
+
+
+
